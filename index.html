@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranav Sharma - Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(0, 0, 33);
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 70px;
+            background-color: rgb(18, 18, 62);
+            border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            box-shadow: 0 0 20px rgb(18, 18, 62);
+        }
+
+        nav .left {
+            text-shadow: 0 0 5px white;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+
+        }
+
+        nav ul li a:hover {
+            color: lavender;
+            font-size: 1.02rem;
+        }
+
+        main hr {
+            border: 0;
+            background: #9c97f1;
+            height: 1.2px;
+            margin: 40px 84px;
+        }
+
+        .left {
+            font-size: 1.5rem;
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 140px 0;
+        }
+
+        .firstSection>div {
+            width: 30%;
+
+        }
+
+        .leftSection {
+            font-size: 3rem;
+
+        }
+
+        .leftSection .buttons {
+            padding: 50px 0;
+        }
+
+        .leftSection .btn {
+            background-color: rgb(63, 8, 86);
+            color: white;
+            padding: 10px;
+            border-radius: 20px;
+            margin: 30px 0;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 0 10px grey;
+            border-color: grey;
+        }
+
+        .leftSection .btn:hover {
+            background-color: rgb(255, 255, 255);
+            color: rgb(63, 8, 86);
+            border-color: rgb(63, 8, 86);
+            font-size: large;
+        }
+
+        .rightSection img {
+            width: 90%;
+            height: 10%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px grey;
+        }
+
+        .purple {
+            color: rgb(216, 128, 253);
+        }
+
+        .text-gray {
+            color: grey;
+        }
+
+        #element {
+            color: rgb(216, 128, 253);
+        }
+
+
+        .footer {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 233px;
+            background-color: rgb(21, 21, 37);
+            padding: 23px 123px;
+            direction: vertical;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            box-shadow: 0 0 10px grey;
+        }
+
+        footer>div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-second {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer-second span {
+            font-size: 1.2rem;
+            margin: 0 20px;
+
+        }
+
+        .footer-second ul {
+            text-decoration: none;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-second li {
+            margin: 0 20px;
+        }
+
+        .footer-second img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .footer-third {
+            text-align: center;
+            font-size: 2rem;
+            margin: 10px 0;
+        }
+
+        .footer-fourth {
+            text-align: center;
+            font-size: 0.8rem;
+            margin: 10px 0;
+        }
+
+        .about {
+            max-width: 80vw;
+            margin: auto;
+        }
+
+        .about h1 {
+            font-size: 1.9rem;
+            margin: 10px 0;
+        }
+
+        .about p {
+            font-size: 1.4rem;
+            margin: 10px 10px;
+        }
+
+        .about .text-gray {
+            color: grey;
+        }
+
+        .skill {
+            max-width: 80vw;
+            margin: auto;
+        }
+
+        .skill h1 {
+            font-size: 1.9rem;
+            margin: 10px 0;
+        }
+
+        .skill .my-skills {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+
+        }
+
+        .skill ul {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            align-items: center;
+        }
+
+        .skill li {
+            margin: 10px 10px;
+            font-size: 1.02rem;
+        }
+
+        .contact {
+            max-width: 80vw;
+            margin: auto;
+            height: 50vh;
+        }
+
+        .contact .contact-tile {
+            margin: 10px 0;
+        }
+
+        .contact .contact-tile .h2 {
+            font-size: 1.9rem;
+            margin: 10px 0;
+        }
+
+        .contact-me {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 50vh;
+            background-color: rgb(21, 21, 37);
+            padding: 23px 123px;
+            flex-direction: column;
+            border-radius: 20px;
+            box-shadow: 0 0 10px grey;
+        }
+
+        .contact-me .contact-inputs {
+            width: 50%;
+            height: 40%;
+            border-radius: 30px;
+            border: none;
+            padding-left: 10px;
+            margin: 10px 0;
+            box-shadow: 0 0 10px grey;
+            position: relative;
+        }
+
+        .contact-me .contact-input {
+            width: 50%;
+            height: 90%;
+            border-radius: 20px;
+            border: none;
+            padding-left: 10px;
+            margin: 10px 0;
+            box-shadow: 0 0 10px grey;
+        }
+
+        .contact-me .contact-inputs:focus {
+            border: #9c97f1 2px solid;
+        }
+
+        .contact-me .contact-input:focus {
+            border: #9c97f1 2px solid;
+        }
+
+        .contact-me .contact-inputs::placeholder {
+            color: grey;
+        }
+
+        .contact-me .contact-input::placeholder {
+            color: grey;
+        }
+
+        .contact-me button {
+            display: flex;
+            align-items: center;
+            padding: 15px 30px;
+            font-size: 16px;
+            gap: 10px;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(45deg, #9c97f1, #f0cbf9);
+            color: white
+        }
+
+        .contact-me .submit:hover {
+            cursor: pointer;
+            font-size: large;
+        }
+
+        .space {
+            margin: 80px 0;
+        }
+
+        .projects {
+            max-width: 80vw;
+            margin: auto;
+            height: 80vh;
+        }
+
+        .projects h1 {
+            font-size: 1.9rem;
+            margin: 10px 0;
+        }
+
+        .projects .project {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .projects .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            margin: 10px 0;
+            width: 300px;
+            height: 500px;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 0 10px grey;
+            background-color: rgb(56, 28, 83);
+        }
+
+        .projects .box .top {
+            width: 100%;
+            height: 50%;
+        }
+
+        .projects .box .top img {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .projects .box .bottom {
+            width: 100%;
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .projects .box .bottom h2 {
+            font-size: 1.3rem;
+            margin: 10px 10px;
+        }
+
+        .projects .box .bottom p {
+            text-align: center;
+            font-size: 1rem;
+            margin: 5px 10px;
+        }
+
+        .projects .project .box a {
+            text-decoration: none;
+            color: white;
+            margin: 10px 0;
+            font-size: 0.8rem;
+            border-bottom: 1px solid white;
+            padding-top: 10px;
+            text-align: center;
+            width: 100px;
+            height: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px grey;
+            background-color: rgb(56, 28, 83);
+            transition: 0.5s;
+        }
+
+        .projects .project .box a:hover {
+            color: grey;
+            cursor: pointer;
+            font-size: large;
+            border-bottom: 1px solid grey;
+            border-top: 1px solid grey;
+            box-shadow: 0 0 10px rgb(56, 28, 83);
+            background-color: rgb(255, 255, 255);
+            transition: 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Pranav's Porfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#section1">About</a></li>
+                    <li><a href="#section2">Projects</a></li>
+                    <li><a href="#section3">Skills</a></li>
+                    <li><a href="#section4">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">
+                Hi, My name is <span class="purple">Pranav</span>
+                <div>and I am a passionate</div>
+                <span id="element"></span>
+                <div class="buttons">
+                    <button class="btn" onclick="location.href='pranav-anand-prakash-sharma-resume.pdf'">Download
+                        Resume</button>
+                    <button class="btn" onclick="location.href='https://github.com/Pranav2092'">Github Profile</button>
+                    <button class="btn" onclick="location.href='https://leetcode.com/u/pranavrcs/'">LeetCode
+                        Profile</button>
+                </div>
+            </div>
+            <div class="rightSection">
+                <img src="pranavphoto.jpg" alt="">
+            </div>
+        </section>
+        <hr>
+        <section class="about" id="section1">
+            <span class="text-gray">My summary</span>
+            <h1>About</h1>
+            <p>I have completed my 10th & 12th from International Indian School,Al-Jubail,Saudi Arabia. Currently, I am
+                pursuing my B.Tech in Computer Science from National Institute of Technology, Tiruchirappalli, Tamil
+                Nadu, India. I am interested in Web Development and IOT. I have knowledge of DSA and problem
+                solving. Currently, I am learning about Web Development. I am more interested in frontend development. I
+                also have the knowledge about C/C++ programming. To enhance my coding and problem solving skills, I
+                regularly practice questions on LeetCode. I am also fascinated by AI and ML technology. I am familiar
+                with the Ubuntu OS.<br><br>
+                I would love to contribute in the great web development project.I hope for future collaborations.
+            </p>
+        </section>
+        <hr>
+        <section class="projects" id="section2">
+            <span class="text-gray">My Projects</span>
+            <h1>Projects</h1>
+            <div class="project">
+                <div class="box">
+                    <div class="top">
+                        <img src="chat.png">
+                    </div>
+                    <div class="bottom">
+                        <h2>ChatApp: A Real-time Chat Application</h2>
+                        <p>This is a simple real time web chat application.The registered users can chat with each other
+                            privately.The project is made using HTML, CSS, Javascript, ReactJS, NodeJS and MongoDB.</p>
+                        <a href="https://github.com/Pranav2092/ChatApp" target="_blank">View Project</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="top">
+                        <img src="tic-tac-toe.png">
+                    </div>
+                    <div class="bottom">
+                        <h2>Tic-Tac-Toe Game</h2>
+                        <p>This is a simple terminal based Tic-Tac-Toe game.It has two version one is single player and
+                            other is multiplayer.This project is made using C.</p>
+                        <a href="https://github.com/Pranav2092/Tic-Tac-Toe-Game" target="_blank">View Project</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="top">
+                        <img src="password.png">
+                    </div>
+                    <div class="bottom">
+                        <h2>Random Password Generator</h2>
+                        <p>This is a simple random password generator. It genertes password of length 15 with
+                            uppercase,lowercase,special characters and numbers. This project is made using C.</p>
+                        <a href="https://github.com/Pranav2092/Random-Password-Generator" target="_blank">View
+                            Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section class="skill" id="section3">
+            <span class="text-gray">Skills I have gained so far</span>
+            <h1>Skills</h1>
+            <div class="my-skills">
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JAVASCRIPT</li>
+                    <li>NODEJS</li>
+                    <li>REACTJS</li>
+                    <li>MONGODB</li>
+                    <li>C</li>
+                    <li>C++</li>
+                    <li>Github</li>
+                    <li>UBUNTU</li>
+                    <li>DSA</li>
+                    <li>PROBLEM SOLVING</li>
+                </ul>
+            </div>
+        </section>
+        <hr>
+        <section class="contact" id="section4">
+            <form onsubmit="sendEmail(); reset(); return false;" class="contact-me">
+                <div class="contact-title">
+                    <h2>Contact Me</h2>
+                </div>
+                <input type="text" name="name" id="name" placeholder=" Your Name" class="contact-inputs" required
+                    autocomplete="off">
+                <input type="text" name="email" id="email" placeholder=" Your Email" class="contact-inputs" required
+                    autocomplete="off">
+                <textarea name="message" id="message" placeholder=" Your message" class="contact-input" required
+                    autocomplete="off"></textarea>
+                <button type="submit" class="submit">Submit</button>
+            </form>
+            <script>
+                function sendEmail() {
+                    Email.send({
+                        Host: "smtp.elasticemail.com",
+                        Username: "pranavrcs@gmail.com",
+                        Password: "9E03E3DA4D4D03DEF6AABB5F668AE0D8CB19",
+                        To: 'pranav2092nitt@gmail.com',
+                        From: "pranavrcs@gmail.com",
+                        Subject: "New Contact Form Enquiry",
+                        Body: "Name: " + document.getElementById("name").value + "<br> Email: " + document.getElementById("email").value + "<br> Message: " + document.getElementById("message").value
+                    }).then(
+                        message => alert("Message Sent Successfully")
+                    );
+                };
+            </script>
+        </section>
+        <div class="space"></div>
+    </main>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['C/C++ Programmer', 'Web Developer'],
+            typeSpeed: 50,
+        });
+    </script>
+</body>
+<footer>
+    <div class="footer">
+        <div class="footer-second">
+            <span>Connect with me on:</span>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/pranav-anand-prakash-sharma-8032a8260/" target="_blank"><img
+                            src="link.png" alt=""></a> </li>
+                <li><a href="https://x.com/Pranav2092" target="_blank"><img src="x.png" alt=""></a> </li>
+                <li><a href="https://www.instagram.com/pranav2092nitt/" target="_blank"><img src="insta.png" alt=""></a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-fourth">
+            Copyright © 2024 Pranav Sharma. All rights reserved.
+        </div>
+        <div class="footer-third">
+            Made with ❤️ by Pranav Sharma
+        </div>
+    </div>
+</footer>
+
+</html>
